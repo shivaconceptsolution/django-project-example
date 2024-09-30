@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+      <input type="radio" name="course" value="Java">Java <br>
+      <input type="radio" name="course" value=".NET">.NET <br>
+      <input type="radio" name="course" value="Python">PYTHON <br>
+      <input type="submit" name="btnsubmit" value="Click" />
+    </form>
+    {{key}}
+</body>
+</html>
