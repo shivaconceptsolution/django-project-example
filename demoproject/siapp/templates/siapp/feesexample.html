@@ -8,11 +8,16 @@
 <body>
     <form action="" method="post">
         {% csrf_token %}
-        <input type="checkbox" name="course" value="C" {% if "C" in key1 %} checked {% endif %} />C <br>
-        <input type="checkbox" name="course" value="CPP" {% if "CPP" in key1 %} checked {% endif %}/>CPP <br>
-        <input type="checkbox" name="course" value="DS" {% if "DS" in key1 %} checked {% endif %} />DS <br>
+        <input type="radio" name="bfee" value="C:2000" >C <br>
+        <input type="radio" name="bfee" value="CPP:4500" >CPP <br>
+        <input type="checkbox" name="afee" value="JAVA:25000" >JAVA <br>
+        <input type="checkbox" name="afee" value="DOTNET:35000" >.NET <br>
         <input type="submit" name="btnsubmit" value="Click" />
+
+
     </form>
-    {{key}}
+
+    {{key1}}:
+    {{key2}}
 </body>
 </html>

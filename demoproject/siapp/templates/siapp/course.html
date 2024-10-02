@@ -8,9 +8,9 @@
 <body>
     <form action="" method="post">
     {% csrf_token %}
-      <input type="radio" name="course" value="Java">Java <br>
-      <input type="radio" name="course" value=".NET">.NET <br>
-      <input type="radio" name="course" value="Python">PYTHON <br>
+      <input type="radio" name="course" value="Java" {% if key == "Java" %} checked {% endif %}>Java <br>
+      <input type="radio" name="course" value=".NET" {% if key == ".NET" %} checked {% endif %}>.NET <br>
+      <input type="radio" name="course" value="Python" {% if key == "Python" %} checked {% endif %}>PYTHON <br>
       <input type="submit" name="btnsubmit" value="Click" />
     </form>
     {{key}}
