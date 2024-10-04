@@ -8,5 +8,6 @@ urlpatterns=[
     path('colorexample',views.colorexample,name='colorexample'),
     path('feesexample',views.feesexample,name='feesexample'),
     path('listexample',views.listexample,name='listexample'),
-    path('ddlexample',views.ddlexample,name='ddlexample')
+    path('ddlexample',views.ddlexample,name='ddlexample'),
+    path('dynamicform',views.dynamicform,name='dynamicform')
 ]

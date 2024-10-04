@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        Dynamic Radio Button
+        {% for item in key %}
+        <input type="radio" value={{item}} name="basicradio" {% if item == radiokey %} checked {% endif %} />{{item}}
+        {% endfor %}
+        <br>   <br>
+        Dynamic Checkbox
+
+        {% for item in key %}
+          <input type="checkbox" value={{item}} name="chk" {% if item in  checkkey %} checked {% endif %}/>{{item}}
+        {% endfor %}
+        <br><br>
+        Dynamic dropdownlist
+         <select name="ddl">
+          {% for item in key %}
+           <option value={{item}} {% if item == ddlkey %} selected {% endif %}>{{item}}</option>
+         {% endfor %}
+         </select>
+         <br> <br>
+         Dynamic Listbox
+         <select name="lst" multiple>
+          {% for item in key %}
+         <option value={{item}} {% if item in  listkey %} selected {% endif %}>{{item}}</option>
+              {% endfor %}
+         </select>
+         <br><br>
+         <input type="submit" name="btnsubmit" value="Click" />
+    </form>
+    {{key1}}
+</body>
+</html>

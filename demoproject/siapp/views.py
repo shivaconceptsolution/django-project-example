@@ -56,3 +56,23 @@ def listexample(request):
 def ddlexample(request):
     data = request.POST.get("ddl")
     return render(request,"siapp/ddlexample.html",{"key":data})
+def dynamicform(request):
+    data = ["C","CPP","DS","Django","Flask","Android","Python"]
+    if request.method=="POST":
+        result=''
+        radiodata = request.POST.get("basicradio")
+        result+= "Radio Button Data is "+radiodata + ' '
+        checkboxdata = request.POST.getlist("chk")
+        s=''
+        for item in checkboxdata:
+            s = s + item  + ' '
+        result+= "Checkbox Data is " + s + ' '
+        ddldata = request.POST.get("ddl")
+        result+= "Dropdownlist Data is "+ str(ddldata) + ' '
+        lstdata = request.POST.getlist("lst")
+        s1=''
+        for item in lstdata:
+            s1 = s1 + item + ' '
+        result+= "Listbox Data is "+s1 + ' '
+        return render(request,"siapp/dynamiccourse.html",{"key":data,"key1":result,"radiokey":radiodata,"checkkey":checkboxdata,"ddlkey":ddldata,"listkey":lstdata})
+    return render(request,"siapp/dynamiccourse.html",{"key":data})
